@@ -38,13 +38,21 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+    alias: {
+      shared: path.resolve(__dirname, '../shared'),
+    },
   },
   plugins: [
     new ModuleFederationPlugin({
       name: 'mfeHeader',
-      filename: 'remoteEÒntry.js',
-      exposes: { './Navbar': './src/components/Navbar' },
-      shared: { react: { singleton: true }, 'react-dom': { singleton: true } },
+      filename: 'remoteEntry.js',
+      exposes: {
+        './Navbar': './src/components/Navbar',
+      },
+      shared: {
+        react: { singleton: true, requiredVersion: '^18.2.0' },
+        'react-dom': { singleton: true, requiredVersion: '^18.2.0' },
+      },
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
