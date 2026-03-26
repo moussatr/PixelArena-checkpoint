@@ -26,3 +26,10 @@
 - Ajout de deux `useEffect` :
   - **useEffect 1 :** Écoute de l'événement `cart:add` pour ajouter les produits au panier.
   - **useEffect 2 :** Émission de l'événement `cart:updated` avec le nombre total d'articles et le prix total lorsque le panier change.
+
+## 7. Gestion des badges dans Navbar
+- Fichier : `mfe-header/src/components/Navbar.jsx`
+- Ajout d'un `useEffect` pour écouter les événements suivants :
+  - **`game:joined` :** Incrémente le badge des notifications.
+  - **`cart:updated` :** Met à jour le badge du panier avec le nombre d'articles.
+- Ajout d'un cleanup pour désabonner les événements lors du démontage du composant.

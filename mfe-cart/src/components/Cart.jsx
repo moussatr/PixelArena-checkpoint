@@ -6,25 +6,17 @@ function Cart() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    // S'abonner à l'événement `cart:add`
-    const handleAddToCart = (product) => {
-      setItems((prevItems) => [...prevItems, product]);
-    };
-
-    eventBus.on('cart:add', handleAddToCart);
-
-    // Nettoyer l'abonnement lors du démontage du composant
-    return () => {
-      eventBus.off('cart:add', handleAddToCart);
-    };
+    const unsubscribe = eventBus.on('cart:add', (product) => {
+      setItems(prev => [...prev, { ...product, cartId: Date.now() }]);
+    });
+    return () => unsubscribe();
   }, []);
 
   useEffect(() => {
-    // Émettre un événement `cart:updated` lorsque le panier change
-    const totalItems = items.length;
-    const totalPrice = items.reduce((sum, item) => sum + item.price, 0);
-
-    eventBus.emit('cart:updated', { totalItems, totalPrice });
+    eventBus.emit('cart:updated', {
+      count: items.length,
+      total: items.reduce((sum, item) => sum + item.price, 0),
+    });
   }, [items]);
 
   const handleRemove = (cartId) => {
