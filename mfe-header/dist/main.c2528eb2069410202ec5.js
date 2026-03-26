@@ -15,7 +15,7 @@
   \**********************/
 (__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
 
-eval("{Promise.all(/*! import() */[__webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"src_components_Lobby_jsx\"), __webpack_require__.e(\"src_bootstrap_jsx\")]).then(__webpack_require__.bind(__webpack_require__, /*! ./bootstrap */ \"./src/bootstrap.jsx\"));\n\n//# sourceURL=webpack://pixelarena-mfe-lobby/./src/index.js?\n}");
+eval("{Promise.all(/*! import() */[__webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"src_components_Navbar_jsx\"), __webpack_require__.e(\"src_bootstrap_jsx\")]).then(__webpack_require__.bind(__webpack_require__, /*! ./bootstrap */ \"./src/bootstrap.jsx\"));\n\n//# sourceURL=webpack://pixelarena-mfe-header/./src/index.js?\n}");
 
 /***/ }
 
@@ -103,7 +103,7 @@ eval("{Promise.all(/*! import() */[__webpack_require__.e(\"webpack_sharing_consu
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + chunkId + "." + {"src_components_Lobby_jsx":"a6d871eee528149617ed","src_bootstrap_jsx":"864a724b78e4be5ccb5f","vendors-node_modules_react-dom_index_js":"7c6ce781c420e7e9ae3f","vendors-node_modules_react_index_js":"962bcb23c5ac89f24f02"}[chunkId] + ".js";
+/******/ 			return "" + chunkId + "." + {"src_components_Navbar_jsx":"3f4bba1ce99fbae81727","src_bootstrap_jsx":"c400146a01f5051b1ee4","vendors-node_modules_react-dom_index_js":"13ad12a08fe0de83f40d","vendors-node_modules_react_index_js":"db6d9c8cb6120291fc1d"}[chunkId] + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -115,7 +115,7 @@ eval("{Promise.all(/*! import() */[__webpack_require__.e(\"webpack_sharing_consu
 /******/ 	/* webpack/runtime/load script */
 /******/ 	(() => {
 /******/ 		var inProgress = {};
-/******/ 		var dataWebpackPrefix = "pixelarena-mfe-lobby:";
+/******/ 		var dataWebpackPrefix = "pixelarena-mfe-header:";
 /******/ 		// loadScript function to load a script via script tag
 /******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
 /******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
@@ -198,7 +198,7 @@ eval("{Promise.all(/*! import() */[__webpack_require__.e(\"webpack_sharing_consu
 /******/ 			var warn = (msg) => {
 /******/ 				if (typeof console !== "undefined" && console.warn) console.warn(msg);
 /******/ 			};
-/******/ 			var uniqueName = "pixelarena-mfe-lobby";
+/******/ 			var uniqueName = "pixelarena-mfe-header";
 /******/ 			var register = (name, version, factory, eager) => {
 /******/ 				var versions = scope[name] = scope[name] || {};
 /******/ 				var activeVersion = versions[version];
@@ -230,7 +230,7 @@ eval("{Promise.all(/*! import() */[__webpack_require__.e(\"webpack_sharing_consu
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
-/******/ 		__webpack_require__.p = "http://localhost:3002/";
+/******/ 		__webpack_require__.p = "http://localhost:3001/";
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/consumes */
@@ -358,8 +358,8 @@ eval("{Promise.all(/*! import() */[__webpack_require__.e(\"webpack_sharing_consu
 /******/ 		});
 /******/ 		var installedModules = {};
 /******/ 		var moduleToHandlerMapping = {
-/******/ 			"webpack/sharing/consume/default/react/react": () => (loadSingletonVersion("default", "react", false, [1,18,2,0], () => (__webpack_require__.e("vendors-node_modules_react_index_js").then(() => (() => (__webpack_require__(/*! react */ "./node_modules/react/index.js"))))))),
-/******/ 			"webpack/sharing/consume/default/react-dom/react-dom": () => (loadSingletonVersion("default", "react-dom", false, [1,18,2,0], () => (__webpack_require__.e("vendors-node_modules_react-dom_index_js").then(() => (() => (__webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js")))))))
+/******/ 			"webpack/sharing/consume/default/react/react": () => (loadStrictVersion("default", "react", false, [1,18,2,0], () => (__webpack_require__.e("vendors-node_modules_react_index_js").then(() => (() => (__webpack_require__(/*! react */ "./node_modules/react/index.js"))))))),
+/******/ 			"webpack/sharing/consume/default/react-dom/react-dom": () => (loadStrictVersion("default", "react-dom", false, [1,18,2,0], () => (__webpack_require__.e("vendors-node_modules_react-dom_index_js").then(() => (() => (__webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js")))))))
 /******/ 		};
 /******/ 		// no consumes in initial chunks
 /******/ 		var chunkMapping = {
@@ -488,7 +488,7 @@ eval("{Promise.all(/*! import() */[__webpack_require__.e(\"webpack_sharing_consu
 /******/ 		
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunkpixelarena_mfe_lobby"] = self["webpackChunkpixelarena_mfe_lobby"] || [];
+/******/ 		var chunkLoadingGlobal = self["webpackChunkpixelarena_mfe_header"] = self["webpackChunkpixelarena_mfe_header"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();
