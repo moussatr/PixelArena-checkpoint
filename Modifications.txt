@@ -20,3 +20,9 @@
 ## 5. Vérifications et tests
 - Vérification des versions de `react` et `react-dom` pour éviter les incompatibilités.
 - Ajout d'un fichier `eventBus.js` pour gérer la communication entre micro-frontends.
+
+## 6. Gestion du panier dans Cart
+- Fichier : `mfe-cart/src/components/Cart.jsx`
+- Ajout de deux `useEffect` :
+  - **useEffect 1 :** Écoute de l'événement `cart:add` pour ajouter les produits au panier.
+  - **useEffect 2 :** Émission de l'événement `cart:updated` avec le nombre total d'articles et le prix total lorsque le panier change.

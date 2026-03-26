@@ -1,21 +1,20 @@
 import React, { Suspense, lazy } from 'react';
 import './App.css';
-import eventBus from 'shared/eventBus';
 
 const Header = lazy(() => import('mfeHeader/Navbar'));
-const Lobby  = lazy(() => import('mfeLobby/Lobby'));
+const Lobby = lazy(() => import('mfeLobby/Lobby'));
 const Catalog = lazy(() => import('mfeCatalog/Catalog'));
+const Cart = lazy(() => import('mfeCart/Cart'));
 
 function LoadingFallback({ name }) {
-  return <div className="loading-fallback">Chargement {name}...</div>;
+  return (
+    <div className="loading-fallback">
+      Chargement {name}...
+    </div>
+  );
 }
 
 function App() {
-  // Ajouter un écouteur pour 'cart:add'
-  eventBus.on('cart:add', (data) => {
-    console.log('[Shell] cart:add event received:', data);
-  });
-
   return (
     <div className="shell">
       <Suspense fallback={<LoadingFallback name="Header" />}>
@@ -23,7 +22,7 @@ function App() {
       </Suspense>
 
       <main className="shell-content">
-        <div className="content-grid">
+        <div className="content-grid-3">
           <section className="section">
             <Suspense fallback={<LoadingFallback name="Lobby" />}>
               <Lobby />
@@ -35,11 +34,17 @@ function App() {
               <Catalog />
             </Suspense>
           </section>
+
+          <section className="section">
+            <Suspense fallback={<LoadingFallback name="Cart" />}>
+              <Cart />
+            </Suspense>
+          </section>
         </div>
       </main>
 
       <footer className="shell-footer">
-        <p>Shell (3000) | Header (3001) | Lobby (3002) | Catalog (3003)</p>
+        <p>Shell (3000) | Header (3001) | Lobby (3002) | Catalog (3003) | Cart (3004)</p>
       </footer>
     </div>
   );
