@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import './App.css';
+import eventBus from 'shared/eventBus';
 
 const Header = lazy(() => import('mfeHeader/Navbar'));
 const Lobby  = lazy(() => import('mfeLobby/Lobby'));
@@ -10,6 +11,11 @@ function LoadingFallback({ name }) {
 }
 
 function App() {
+  // Ajouter un écouteur pour 'cart:add'
+  eventBus.on('cart:add', (data) => {
+    console.log('[Shell] cart:add event received:', data);
+  });
+
   return (
     <div className="shell">
       <Suspense fallback={<LoadingFallback name="Header" />}>

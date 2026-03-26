@@ -1,0 +1,22 @@
+# Modifications apportées
+
+## 1. Configuration de Module Federation
+- Fichier : `mfe-catalog/webpack.config.js`
+- Ajout de la configuration pour exposer le composant `Catalog` via Module Federation.
+
+## 2. Émission d'événements avec EventBus
+- Fichier : `mfe-catalog/src/components/Catalog.jsx`
+- Ajout de l'émission de l'événement `cart:add` lorsque l'utilisateur clique sur "Ajouter".
+
+## 3. Déclaration de `mfe-catalog` comme remote
+- Fichier : `shell/webpack.config.js`
+- Ajout de `mfeCatalog` comme remote dans la configuration de Module Federation.
+
+## 4. Intégration du composant Catalog dans le Shell
+- Fichier : `shell/src/App.jsx`
+- Importation et affichage du composant `Catalog` dans l'application principale.
+- Ajout d'un écouteur pour l'événement `cart:add` afin de loguer les données dans la console.
+
+## 5. Vérifications et tests
+- Vérification des versions de `react` et `react-dom` pour éviter les incompatibilités.
+- Ajout d'un fichier `eventBus.js` pour gérer la communication entre micro-frontends.
