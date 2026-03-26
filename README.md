@@ -32,16 +32,6 @@ Les 3 bugs se trouvent dans des fichiers `webpack.config.js` :
 
 ---
 
-## Bugs corrigés
-
-1. **shell/webpack.config.js** : Le port pour `mfeLobby` était incorrect dans la configuration `remotes`. Il a été corrigé pour pointer vers `http://localhost:3002/remoteEntry.js`.
-
-2. **mfe-header/webpack.config.js** : Le chemin exposé pour `Navbar` manquait l'extension `.jsx`. Cela a été corrigé en ajoutant l'extension.
-
-3. **mfe-catalog/webpack.config.js** : Le chemin exposé pour `CatalogView` manquait également l'extension `.jsx`. Cela a été corrigé en ajoutant l'extension.
-
----
-
 ## Validation
 
 `localhost:3000` affiche les 4 MFEs sans erreur console.
